@@ -1,0 +1,123 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#f9e2af",
+          "leading_diamond": "<#BFA8BF>~</> ",
+          "properties": {
+            "display_host": true
+          },
+          "style": "diamond",
+          "template": "{{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "#f9e2af",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_worktree_count": true
+          },
+          "style": "diamond",
+          "template": "<#fff>{{ .UpstreamIcon }}</>{{ .HEAD }}",
+          "type": "git"
+        },
+        {
+          "foreground": "#f9e2af",
+          "style": "powerline",
+          "template": " <#fff>\uf120</> {{ .Name }} ",
+          "type": "shell"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#fff",
+          "style": "plain",
+          "type": "text"
+        },
+        {
+          "foreground": "#fff",
+          "properties": {
+            "style": "dallas",
+            "threshold": 0
+          },
+          "style": "diamond",
+          "template": " <#f9e2af>{{ .FormattedMs }}s</> <#fff>\udb80\udddd</>",
+          "type": "executiontime"
+        },
+        {
+          "foreground": "#fab387",
+          "properties": {
+            "time_format": " Mon Jan <#fff>на</> 15:04"
+          },
+          "style": "diamond",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        },
+        {
+          "properties": {
+            "root_icon": "\uf292 "
+          },
+          "style": "diamond",
+          "template": " \uf0e7",
+          "type": "root"
+        },
+        {
+          "foreground": "#eba0ac",
+          "style": "diamond",
+          "template": " <#fff>\ue718</> {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#eba0ac",
+          "leading_diamond": "<#BFA8BF>~</>",
+          "properties": {
+            "folder_icon": "\u002F",
+            "folder_separator_icon": " \u002F ",
+            "home_icon": "home",
+            "style": "agnoster_full"
+          },
+          "style": "diamond",
+          "template": " \ue5ff {{ .Path }}",
+          "trailing_diamond": "",
+          "type": "path"
+        },
+        {
+          "foreground": "#f9e2af",
+          "foreground_templates": ["{{ if gt .Code 0 }}#fff{{ end }}"],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": " \u007E ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{ .Folder }}",
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#FEF5ED",
+    "template": "\ue285 "
+  },
+  "version": 2
+}
